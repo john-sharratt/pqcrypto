@@ -1,6 +1,6 @@
 [package]
-name = "pqcrypto-{{ name }}"
-description = "Post-Quantum {% if type == "kem" %}Key-Encapsulation Mechanism{% else %}Signature Scheme{% endif %} {{ name }}"
+name = "pqcrypto-{{ name }}-wasi"
+description = "Post-Quantum {% if type == "kem" %}Key-Encapsulation Mechanism{% else %}Signature Scheme{% endif %} {{ name }} with WASM/WASI support"
 readme = "README.md"
 version = "{{ version }}"
 authors = ["Thom Wiggers <thom@thomwiggers.nl>"]
@@ -12,8 +12,8 @@ keywords = ["cryptography", "post-quantum", "security"]
 categories = ["cryptography", "no-std"]
 
 [dependencies]
-pqcrypto-internals = { path = "../pqcrypto-internals", version = "0.2" }
-pqcrypto-traits = {path = "../pqcrypto-traits", version = "{{ traits_version }}", default-features = false}
+pqcrypto-internals-wasi = { path = "../pqcrypto-internals", version = "0.2" }
+pqcrypto-traits-wasi = {path = "../pqcrypto-traits", version = "{{ traits_version }}", default-features = false}
 libc = "0.2.0"
 serde = { version = "1.0", features = ["derive"], optional = true }
 serde-big-array = { version = "0.3.2", features = ["const-generics"], optional = true }
@@ -25,7 +25,7 @@ avx2 = ["std"]
 {% else %}
 default = ["std"]
 {% endif %}
-std = ["pqcrypto-traits/std"]
+std = ["pqcrypto-traits-wasi/std"]
 serialization = ["serde", "serde-big-array"]
 {% if insecure %}
 cryptographically-insecure = []

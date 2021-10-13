@@ -1,6 +1,6 @@
 [package]
-name = "pqcrypto-falcon"
-description = "Post-Quantum Signature Scheme falcon"
+name = "pqcrypto-falcon-wasi"
+description = "Post-Quantum Signature Scheme falcon with WASM/WASI support"
 readme = "README.md"
 version = "0.2.9"
 authors = ["Thom Wiggers <thom@thomwiggers.nl>"]
@@ -12,8 +12,8 @@ keywords = ["cryptography", "post-quantum", "security"]
 categories = ["cryptography", "no-std"]
 
 [dependencies]
-pqcrypto-internals = { path = "../pqcrypto-internals", version = "0.2" }
-pqcrypto-traits = {path = "../pqcrypto-traits", version = "0.3.4", default-features = false}
+pqcrypto-internals-wasi = { path = "../pqcrypto-internals", version = "0.2" }
+pqcrypto-traits-wasi = {path = "../pqcrypto-traits", version = "0.3.4", default-features = false}
 libc = "0.2.0"
 serde = { version = "1.0", features = ["derive"], optional = true }
 serde-big-array = { version = "0.3.2", features = ["const-generics"], optional = true }
@@ -21,7 +21,7 @@ serde-big-array = { version = "0.3.2", features = ["const-generics"], optional =
 [features]
 default = ["avx2", "std"]
 avx2 = ["std"]
-std = ["pqcrypto-traits/std"]
+std = ["pqcrypto-traits-wasi/std"]
 serialization = ["serde", "serde-big-array"]
 
 [dev-dependencies]
