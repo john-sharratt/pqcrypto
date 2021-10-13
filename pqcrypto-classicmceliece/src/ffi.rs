@@ -19,7 +19,7 @@ use libc::c_int;
 
 // ensures we link correctly
 #[allow(unused_imports)]
-use pqcrypto_internals::*;
+use pqcrypto_internals_wasi::*;
 
 pub const PQCLEAN_MCELIECE348864_VEC_CRYPTO_SECRETKEYBYTES: usize = 6452;
 pub const PQCLEAN_MCELIECE348864_VEC_CRYPTO_PUBLICKEYBYTES: usize = 261120;

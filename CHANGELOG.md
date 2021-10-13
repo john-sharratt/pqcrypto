@@ -120,7 +120,7 @@
 * Package Rainbow
     * The ``clean`` implementations are currently known to have undefined behaviour.
       See https://github.com/PQClean/PQClean/issues/220
-* Hide a internal enum variable from ``pqcrypto_traits::sign::VerificationError``
+* Hide a internal enum variable from ``pqcrypto_traits_wasi::sign::VerificationError``
 
 ## 2019-07-24
 
@@ -148,7 +148,7 @@
 * Remove ``pqcrypto-internals``
 
 ## 2019-05-22
-* Added ``pqcrypto_traits::{Error,Result}`` to ``from_bytes`` signature.
+* Added ``pqcrypto_traits_wasi::{Error,Result}`` to ``from_bytes`` signature.
 * Added ``pqcrypto::prelude`` to allow importing all traits in one easy go.
 * Removed all uses of ``mem::uninitialized()``
 

@@ -15,7 +15,7 @@ use libc::c_int;
 
 // ensures we link correctly
 #[allow(unused_imports)]
-use pqcrypto_internals::*;
+use pqcrypto_internals_wasi::*;
 
 pub const PQCLEAN_KYBER512_CLEAN_CRYPTO_SECRETKEYBYTES: usize = 1632;
 pub const PQCLEAN_KYBER512_CLEAN_CRYPTO_PUBLICKEYBYTES: usize = 800;

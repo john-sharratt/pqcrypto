@@ -4,7 +4,7 @@
 //!
 //! # Example
 //! ```
-//! use pqcrypto_sphincsplus::sphincsharaka192ssimple::*;
+//! use pqcrypto_sphincsplus_wasi::sphincsharaka192ssimple::*;
 //! let message = vec![0, 1, 2, 3, 4, 5];
 //! let (pk, sk) = keypair();
 //! let sm = sign(&message, &sk);
@@ -23,8 +23,8 @@ use serde_big_array::BigArray;
 
 use crate::ffi;
 use alloc::vec::Vec;
-use pqcrypto_traits::sign as primitive;
-use pqcrypto_traits::{Error, Result};
+use pqcrypto_traits_wasi::sign as primitive;
+use pqcrypto_traits_wasi::{Error, Result};
 
 macro_rules! simple_struct {
     ($type: ident, $size: expr) => {

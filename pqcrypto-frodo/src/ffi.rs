@@ -15,7 +15,7 @@ use libc::c_int;
 
 // ensures we link correctly
 #[allow(unused_imports)]
-use pqcrypto_internals::*;
+use pqcrypto_internals_wasi::*;
 
 pub const PQCLEAN_FRODOKEM640AES_OPT_CRYPTO_SECRETKEYBYTES: usize = 19888;
 pub const PQCLEAN_FRODOKEM640AES_OPT_CRYPTO_PUBLICKEYBYTES: usize = 9616;

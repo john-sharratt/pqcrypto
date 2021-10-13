@@ -4,7 +4,7 @@
 //!
 //! # Example
 //! ```no_run
-//! use pqcrypto_classicmceliece::mceliece8192128::*;
+//! use pqcrypto_classicmceliece_wasi::mceliece8192128::*;
 //! let (pk, sk) = keypair();
 //! let (ss1, ct) = encapsulate(&pk);
 //! let ss2 = decapsulate(&ct, &sk);
@@ -21,8 +21,8 @@ use serde::{Deserialize, Serialize};
 use serde_big_array::BigArray;
 
 use crate::ffi;
-use pqcrypto_traits::kem as primitive;
-use pqcrypto_traits::{Error, Result};
+use pqcrypto_traits_wasi::kem as primitive;
+use pqcrypto_traits_wasi::{Error, Result};
 
 macro_rules! simple_struct {
     ($type: ident, $size: expr) => {

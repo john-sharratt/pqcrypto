@@ -3,16 +3,16 @@
 /// Packages the [PQClean][pqclean] project as Rust crates
 ///
 /// [pqclean]: https://github.com/PQClean/PQClean/
-pub use pqcrypto_traits as traits;
+pub use pqcrypto_traits_wasi as traits;
 
 pub mod prelude {
-    pub use pqcrypto_traits::sign::{
+    pub use pqcrypto_traits_wasi::sign::{
         SecretKey as _,
         PublicKey as _,
         SignedMessage as _,
         DetachedSignature as _,
     };
-    pub use pqcrypto_traits::kem::{
+    pub use pqcrypto_traits_wasi::kem::{
         Ciphertext as _,
         PublicKey as _,
         SecretKey as _,
@@ -22,8 +22,8 @@ pub mod prelude {
 
 pub mod kem {
     {% for kem in kems.keys() %}
-    #[cfg(feature = "pqcrypto-{{kem}}")]
-    pub use pqcrypto_{{ kem }}::{
+    #[cfg(feature = "pqcrypto-{{kem}}-wasi")]
+    pub use pqcrypto_{{ kem }}_wasi::{
         {% for scheme in kems[kem]['schemes'] %}
         {{ scheme['name']|nameize }},
         {% endfor %}
@@ -33,8 +33,8 @@ pub mod kem {
 
 pub mod sign {
     {% for sign in signs.keys() %}
-    #[cfg(feature = "pqcrypto-{{sign}}")]
-    pub use pqcrypto_{{ sign }}::{
+    #[cfg(feature = "pqcrypto-{{sign}}-wasi")]
+    pub use pqcrypto_{{ sign }}_wasi::{
         {% for scheme in signs[sign]['schemes'] %}
         {{ scheme['name']|nameize }},
         {% endfor %}

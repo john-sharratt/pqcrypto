@@ -10,13 +10,13 @@
 //! ```{% if not scheme.doctest|default(true) %}no_run{% endif %}
 
 {% if type == "kem" %}
-//! use pqcrypto_{{ name }}::{{ scheme.name|nameize }}::*;
+//! use pqcrypto_{{ name }}_wasi::{{ scheme.name|nameize }}::*;
 //! let (pk, sk) = keypair();
 //! let (ss1, ct) = encapsulate(&pk);
 //! let ss2 = decapsulate(&ct, &sk);
 //! assert!(ss1 == ss2);
 {% else %}
-//! use pqcrypto_{{ name }}::{{ scheme.name|nameize }}::*;
+//! use pqcrypto_{{ name }}_wasi::{{ scheme.name|nameize }}::*;
 //! let message = vec![0, 1, 2, 3, 4, 5];
 //! let (pk, sk) = keypair();
 //! let sm = sign(&message, &sk);
@@ -35,12 +35,12 @@ use serde::{Deserialize, Serialize};
 use serde_big_array::BigArray;
 
 use crate::ffi;
-use pqcrypto_traits::{Result, Error};
+use pqcrypto_traits_wasi::{Result, Error};
 {% if type == "kem" %}
-use pqcrypto_traits::kem as primitive;
+use pqcrypto_traits_wasi::kem as primitive;
 {% else %}
 use alloc::vec::Vec;
-use pqcrypto_traits::sign as primitive;
+use pqcrypto_traits_wasi::sign as primitive;
 {% endif %}
 
 macro_rules! simple_struct {

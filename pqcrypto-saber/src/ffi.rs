@@ -12,7 +12,7 @@ use libc::c_int;
 
 // ensures we link correctly
 #[allow(unused_imports)]
-use pqcrypto_internals::*;
+use pqcrypto_internals_wasi::*;
 
 pub const PQCLEAN_FIRESABER_CLEAN_CRYPTO_SECRETKEYBYTES: usize = 3040;
 pub const PQCLEAN_FIRESABER_CLEAN_CRYPTO_PUBLICKEYBYTES: usize = 1312;

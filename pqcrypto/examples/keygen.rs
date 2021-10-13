@@ -1,8 +1,8 @@
 use std::fs::File;
 use std::io::prelude::*;
 
-use pqcrypto::prelude::*;
-use pqcrypto::sign::sphincsharaka128frobust::*;
+use pqcrypto_wasi::prelude::*;
+use pqcrypto_wasi::sign::sphincsharaka128frobust::*;
 
 fn main() -> std::io::Result<()> {
     let mut pubfile = File::create("publickey.bin")?;

@@ -1,7 +1,7 @@
 use std::fs;
 
-use pqcrypto::prelude::*;
-use pqcrypto::sign::sphincsharaka128frobust::*;
+use pqcrypto_wasi::prelude::*;
+use pqcrypto_wasi::sign::sphincsharaka128frobust::*;
 
 fn parseargs() -> (String, String, String) {
     let args: Vec<String> = std::env::args().collect();
