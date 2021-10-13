@@ -6,7 +6,7 @@ edition = "2018"
 description = "Shared traits for post-quantum cryptographic primitives"
 license = "MIT OR Apache-2.0"
 homepage = "https://github.com/rustpq/"
-repository = "https://github.com/rustpq/pqclean/"
+repository = "https://github.com/john-sharratt/pqcrypto-wasi"
 keywords = ["cryptography", "post-quantum", "security"]
 categories = ["cryptography", "no-std"]
 
