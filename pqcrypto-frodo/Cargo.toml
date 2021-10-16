@@ -2,7 +2,7 @@
 name = "pqcrypto-frodo-wasi"
 description = "Post-Quantum Key-Encapsulation Mechanism frodo with WASM/WASI support"
 readme = "README.md"
-version = "0.4.9"
+version = "0.4.10"
 authors = ["Thom Wiggers <thom@thomwiggers.nl>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"

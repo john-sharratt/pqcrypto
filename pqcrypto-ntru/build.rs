@@ -5,7 +5,7 @@ use std::env;
 use std::path::{Path, PathBuf};
 
 fn main() {
-    let internals_include_path = &std::env::var("DEP_PQCRYPTO_INTERNALS_INCLUDEPATH").unwrap();
+    let internals_include_path = &std::env::var("DEP_PQCRYPTO_INTERNALS_WASI_INCLUDEPATH").unwrap();
     let common_dir = Path::new("pqclean/common");
 
     #[allow(unused_variables)]

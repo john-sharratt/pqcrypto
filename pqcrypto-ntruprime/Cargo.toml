@@ -2,7 +2,7 @@
 name = "pqcrypto-ntruprime-wasi"
 description = "Post-Quantum Key-Encapsulation Mechanism ntruprime with WASM/WASI support"
 readme = "README.md"
-version = "0.1.4"
+version = "0.1.5"
 authors = ["Thom Wiggers <thom@thomwiggers.nl>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
