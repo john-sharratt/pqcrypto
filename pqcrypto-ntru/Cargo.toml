@@ -2,7 +2,7 @@
 name = "pqcrypto-ntru-wasi"
 description = "Post-Quantum Key-Encapsulation Mechanism ntru with WASM/WASI support"
 readme = "README.md"
-version = "0.5.7"
+version = "0.5.8"
 authors = ["Thom Wiggers <thom@thomwiggers.nl>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"

@@ -4,7 +4,7 @@
 //!
 //! # Example
 //! ```
-//! use pqcrypto_rainbow::rainbowicircumzenithal::*;
+//! use pqcrypto_rainbow_wasi::rainbowicircumzenithal::*;
 //! let message = vec![0, 1, 2, 3, 4, 5];
 //! let (pk, sk) = keypair();
 //! let sm = sign(&message, &sk);
