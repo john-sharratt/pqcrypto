@@ -2,7 +2,7 @@
 name = "pqcrypto-falcon-wasi"
 description = "Post-Quantum Signature Scheme falcon with WASM/WASI support"
 readme = "README.md"
-version = "0.2.11"
+version = "0.2.12"
 authors = ["Thom Wiggers <thom@thomwiggers.nl>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"

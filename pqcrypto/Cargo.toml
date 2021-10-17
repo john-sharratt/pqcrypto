@@ -2,7 +2,7 @@
 name = "pqcrypto-wasi"
 description = "Post-Quantum cryptographic primitives with WASM/WASI support"
 readme = "README.md"
-version = "0.14.3"
+version = "0.14.4"
 authors = ["Thom Wiggers <thom@thomwiggers.nl>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
@@ -13,17 +13,17 @@ categories = ["cryptography"]
 
 [dependencies]
 pqcrypto-traits-wasi = { path = "../pqcrypto-traits", version = "0.3.4" }
-pqcrypto-kyber-wasi = { path = "../pqcrypto-kyber", version = "0.7.5", optional = true }
-pqcrypto-frodo-wasi = { path = "../pqcrypto-frodo", version = "0.4.11", optional = true }
-pqcrypto-ntru-wasi = { path = "../pqcrypto-ntru", version = "0.5.8", optional = true }
-pqcrypto-ntruprime-wasi = { path = "../pqcrypto-ntruprime", version = "0.1.6", optional = true }
-pqcrypto-saber-wasi = { path = "../pqcrypto-saber", version = "0.1.11", optional = true }
-pqcrypto-classicmceliece-wasi = { path = "../pqcrypto-classicmceliece", version = "0.1.7", optional = true }
-pqcrypto-hqc-wasi = { path = "../pqcrypto-hqc", version = "0.1.5", optional = true }
-pqcrypto-dilithium-wasi = { path = "../pqcrypto-dilithium", version = "0.4.6", optional = true }
-pqcrypto-falcon-wasi = { path = "../pqcrypto-falcon", version = "0.2.11", optional = true }
-pqcrypto-rainbow-wasi = { path = "../pqcrypto-rainbow", version = "0.2.5", optional = true }
-pqcrypto-sphincsplus-wasi = { path = "../pqcrypto-sphincsplus", version = "0.6.4", optional = true }
+pqcrypto-kyber-wasi = { path = "../pqcrypto-kyber", version = "0.7.6", optional = true }
+pqcrypto-frodo-wasi = { path = "../pqcrypto-frodo", version = "0.4.12", optional = true }
+pqcrypto-ntru-wasi = { path = "../pqcrypto-ntru", version = "0.5.9", optional = true }
+pqcrypto-ntruprime-wasi = { path = "../pqcrypto-ntruprime", version = "0.1.7", optional = true }
+pqcrypto-saber-wasi = { path = "../pqcrypto-saber", version = "0.1.12", optional = true }
+pqcrypto-classicmceliece-wasi = { path = "../pqcrypto-classicmceliece", version = "0.1.8", optional = true }
+pqcrypto-hqc-wasi = { path = "../pqcrypto-hqc", version = "0.1.6", optional = true }
+pqcrypto-dilithium-wasi = { path = "../pqcrypto-dilithium", version = "0.4.7", optional = true }
+pqcrypto-falcon-wasi = { path = "../pqcrypto-falcon", version = "0.2.12", optional = true }
+pqcrypto-rainbow-wasi = { path = "../pqcrypto-rainbow", version = "0.2.6", optional = true }
+pqcrypto-sphincsplus-wasi = { path = "../pqcrypto-sphincsplus", version = "0.6.5", optional = true }
 
 [features]
 default = ["pqcrypto-kyber-wasi","pqcrypto-frodo-wasi","pqcrypto-ntru-wasi","pqcrypto-ntruprime-wasi","pqcrypto-saber-wasi","pqcrypto-classicmceliece-wasi","pqcrypto-hqc-wasi","pqcrypto-dilithium-wasi","pqcrypto-falcon-wasi","pqcrypto-rainbow-wasi","pqcrypto-sphincsplus-wasi",]
