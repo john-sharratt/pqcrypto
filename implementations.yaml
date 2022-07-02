@@ -1,6 +1,6 @@
 ---
 
-pqcrypto_version: 0.14.2
+pqcrypto_version: 0.14.3
 traits_version: 0.3.4
 
 kems:
@@ -44,7 +44,7 @@ kems:
       - name: frodokem1344shake
         implementations: [opt, clean]
   ntru:
-    version: 0.5.7
+    version: 0.5.8
     implementations: [clean, avx2]
     schemes:
       - name: ntruhps2048509
@@ -156,7 +156,7 @@ signs:
       - name: dilithium5
         implementations: [clean, avx2]
   falcon:
-    version: 0.2.10
+    version: 0.2.11
     implementations: [clean, avx2]
     schemes:
       - name: falcon-512
