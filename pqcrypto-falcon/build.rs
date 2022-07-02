@@ -18,7 +18,11 @@ macro_rules! build_clean {
         if target_os == "wasi" {
             let wasi_sdk_path =
                 &std::env::var("WASI_SDK_DIR").expect("missing environment variable: WASI_SDK_DIR");
-            builder.flag(format!("--sysroot={}", wasi_sdk_path).as_str());
+            if wasi_sdk_path.ends_with("/") {
+                builder.include(format!("{}include", wasi_sdk_path).as_str());
+            } else {
+                builder.include(format!("{}/include", wasi_sdk_path).as_str());
+            }
         }
 
         let scheme_files = glob::glob(target_dir.join("*.c").to_str().unwrap()).unwrap();
@@ -50,7 +54,11 @@ macro_rules! build_avx2 {
         if target_os == "wasi" {
             let wasi_sdk_path =
                 &std::env::var("WASI_SDK_DIR").expect("missing environment variable: WASI_SDK_DIR");
-            builder.flag(format!("--sysroot={}", wasi_sdk_path).as_str());
+            if wasi_sdk_path.ends_with("/") {
+                builder.include(format!("{}include", wasi_sdk_path).as_str());
+            } else {
+                builder.include(format!("{}/include", wasi_sdk_path).as_str());
+            }
         }
 
         let scheme_files = glob::glob(target_dir.join("*.[csS]").to_str().unwrap()).unwrap();

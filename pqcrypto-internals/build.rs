@@ -23,6 +23,11 @@ fn main() {
         let wasi_sdk_path =
             &std::env::var("WASI_SDK_DIR").expect("missing environment variable: WASI_SDK_DIR");
         build.flag(format!("--sysroot={}", wasi_sdk_path).as_str());
+        if wasi_sdk_path.ends_with("/") {
+            build.include(format!("{}include", wasi_sdk_path).as_str());
+        } else {
+            build.include(format!("{}/include", wasi_sdk_path).as_str());
+        }
     }
 
     build
