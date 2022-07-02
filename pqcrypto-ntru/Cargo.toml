@@ -1,5 +1,5 @@
 [package]
-name = "pqcrypto-ntru"
+name = "pqcrypto-ntru-wasi"
 description = "Post-Quantum Key-Encapsulation Mechanism ntru"
 readme = "README.md"
 version = "0.5.10"
