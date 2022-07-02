@@ -17,17 +17,23 @@ fn main() {
     ];
 
     let mut build = cc::Build::new();
+    if env::var("CARGO_CFG_TARGET_OS").unwrap_or_default().as_str() == "wasi" {
+        if env::var("CARGO_CFG_TARGET_ARCH")
+            .unwrap_or_default()
+            .as_str()
+            == "wasm64"
+        {
+            build.target("wasm64-wasi");
+        } else {
+            build.target("wasm32-wasi");
+        }
+    }
 
     let target_os = env::var("CARGO_CFG_TARGET_OS").unwrap();
     if target_os == "wasi" {
         let wasi_sdk_path =
             &std::env::var("WASI_SDK_DIR").expect("missing environment variable: WASI_SDK_DIR");
         build.flag(format!("--sysroot={}", wasi_sdk_path).as_str());
-        if wasi_sdk_path.ends_with("/") {
-            build.include(format!("{}include", wasi_sdk_path).as_str());
-        } else {
-            build.include(format!("{}/include", wasi_sdk_path).as_str());
-        }
     }
 
     build

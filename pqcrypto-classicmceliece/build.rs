@@ -10,17 +10,25 @@ macro_rules! build_vec {
         let common_dir = Path::new("pqclean/common");
 
         let mut builder = cc::Build::new();
+        if env::var("CARGO_CFG_TARGET_OS").unwrap_or_default().as_str() == "wasi" {
+            if env::var("CARGO_CFG_TARGET_ARCH")
+                .unwrap_or_default()
+                .as_str()
+                == "wasm64"
+            {
+                builder.target("wasm64-wasi");
+            } else {
+                builder.target("wasm32-wasi");
+            }
+        }
+
         let target_dir: PathBuf = ["pqclean", "crypto_kem", $variant, "vec"].iter().collect();
 
         let target_os = env::var("CARGO_CFG_TARGET_OS").unwrap();
         if target_os == "wasi" {
             let wasi_sdk_path =
                 &std::env::var("WASI_SDK_DIR").expect("missing environment variable: WASI_SDK_DIR");
-            if wasi_sdk_path.ends_with("/") {
-                builder.include(format!("{}include", wasi_sdk_path).as_str());
-            } else {
-                builder.include(format!("{}/include", wasi_sdk_path).as_str());
-            }
+            builder.flag(format!("--sysroot={}", wasi_sdk_path).as_str());
         }
 
         let scheme_files = glob::glob(target_dir.join("*.c").to_str().unwrap()).unwrap();
@@ -44,6 +52,18 @@ macro_rules! build_clean {
         let common_dir = Path::new("pqclean/common");
 
         let mut builder = cc::Build::new();
+        if env::var("CARGO_CFG_TARGET_OS").unwrap_or_default().as_str() == "wasi" {
+            if env::var("CARGO_CFG_TARGET_ARCH")
+                .unwrap_or_default()
+                .as_str()
+                == "wasm64"
+            {
+                builder.target("wasm64-wasi");
+            } else {
+                builder.target("wasm32-wasi");
+            }
+        }
+
         let target_dir: PathBuf = ["pqclean", "crypto_kem", $variant, "clean"]
             .iter()
             .collect();
@@ -52,11 +72,7 @@ macro_rules! build_clean {
         if target_os == "wasi" {
             let wasi_sdk_path =
                 &std::env::var("WASI_SDK_DIR").expect("missing environment variable: WASI_SDK_DIR");
-            if wasi_sdk_path.ends_with("/") {
-                builder.include(format!("{}include", wasi_sdk_path).as_str());
-            } else {
-                builder.include(format!("{}/include", wasi_sdk_path).as_str());
-            }
+            builder.flag(format!("--sysroot={}", wasi_sdk_path).as_str());
         }
 
         let scheme_files = glob::glob(target_dir.join("*.c").to_str().unwrap()).unwrap();
@@ -80,17 +96,25 @@ macro_rules! build_avx {
         let common_dir = Path::new("pqclean/common");
 
         let mut builder = cc::Build::new();
+        if env::var("CARGO_CFG_TARGET_OS").unwrap_or_default().as_str() == "wasi" {
+            if env::var("CARGO_CFG_TARGET_ARCH")
+                .unwrap_or_default()
+                .as_str()
+                == "wasm64"
+            {
+                builder.target("wasm64-wasi");
+            } else {
+                builder.target("wasm32-wasi");
+            }
+        }
+
         let target_dir: PathBuf = ["pqclean", "crypto_kem", $variant, "avx"].iter().collect();
 
         let target_os = env::var("CARGO_CFG_TARGET_OS").unwrap();
         if target_os == "wasi" {
             let wasi_sdk_path =
                 &std::env::var("WASI_SDK_DIR").expect("missing environment variable: WASI_SDK_DIR");
-            if wasi_sdk_path.ends_with("/") {
-                builder.include(format!("{}include", wasi_sdk_path).as_str());
-            } else {
-                builder.include(format!("{}/include", wasi_sdk_path).as_str());
-            }
+            builder.flag(format!("--sysroot={}", wasi_sdk_path).as_str());
         }
 
         let scheme_files = glob::glob(target_dir.join("*.[csS]").to_str().unwrap()).unwrap();
