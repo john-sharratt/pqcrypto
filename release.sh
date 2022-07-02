@@ -9,21 +9,21 @@ publish() {
 }
 
 
-publish pqcrypto-traits
-publish pqcrypto-internals
+publish pqcrypto-traits-wasi
+publish pqcrypto-internals-wasi
 sleep 10
 echo "Waiting a little bit for the pqcrypto-traits package to settle on crates.io"
-publish pqcrypto-kyber
-publish pqcrypto-frodo
-publish pqcrypto-ntru
-publish pqcrypto-ntruprime
-publish pqcrypto-hqc
-publish pqcrypto-sphincsplus
-publish pqcrypto-saber
-publish pqcrypto-dilithium
-publish pqcrypto-falcon
-publish pqcrypto-rainbow
-publish pqcrypto-classicmceliece
+publish pqcrypto-kyber-wasi
+publish pqcrypto-frodo-wasi
+publish pqcrypto-ntru-wasi
+publish pqcrypto-ntruprime-wasi
+publish pqcrypto-hqc-wasi
+publish pqcrypto-sphincsplus-wasi
+publish pqcrypto-saber-wasi
+publish pqcrypto-dilithium-wasi
+publish pqcrypto-falcon-wasi
+publish pqcrypto-rainbow-wasi
+publish pqcrypto-classicmceliece-wasi
 
 echo "Waiting a little bit for the packages to settle on crates.io"
 

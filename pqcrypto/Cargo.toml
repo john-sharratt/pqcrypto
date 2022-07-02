@@ -12,18 +12,18 @@ keywords = ["cryptography", "post-quantum", "security"]
 categories = ["cryptography"]
 
 [dependencies]
-pqcrypto-traits = { path = "../pqcrypto-traits", version = "0.3.4" }
-pqcrypto-kyber = { path = "../pqcrypto-kyber", version = "0.7.4", optional = true }
-pqcrypto-frodo = { path = "../pqcrypto-frodo", version = "0.4.10", optional = true }
-pqcrypto-ntru = { path = "../pqcrypto-ntru", version = "0.5.7", optional = true }
-pqcrypto-ntruprime = { path = "../pqcrypto-ntruprime", version = "0.1.5", optional = true }
-pqcrypto-saber = { path = "../pqcrypto-saber", version = "0.1.10", optional = true }
-pqcrypto-classicmceliece = { path = "../pqcrypto-classicmceliece", version = "0.1.6", optional = true }
-pqcrypto-hqc = { path = "../pqcrypto-hqc", version = "0.1.4", optional = true }
-pqcrypto-dilithium = { path = "../pqcrypto-dilithium", version = "0.4.4", optional = true }
-pqcrypto-falcon = { path = "../pqcrypto-falcon", version = "0.2.10", optional = true }
-pqcrypto-rainbow = { path = "../pqcrypto-rainbow", version = "0.2.4", optional = true }
-pqcrypto-sphincsplus = { path = "../pqcrypto-sphincsplus", version = "0.6.3", optional = true }
+pqcrypto-traits = { package = "pqcrypto-traits-wasi", path = "../pqcrypto-traits", version = "0.3.4" }
+pqcrypto-kyber = { package = "pqcrypto-kyber-wasi", path = "../pqcrypto-kyber", version = "0.7.4", optional = true }
+pqcrypto-frodo = { package = "pqcrypto-frodo-wasi", path = "../pqcrypto-frodo", version = "0.4.10", optional = true }
+pqcrypto-ntru = { package = "pqcrypto-ntru-wasi", path = "../pqcrypto-ntru", version = "0.5.11", optional = true }
+pqcrypto-ntruprime = { package = "pqcrypto-ntruprime-wasi", path = "../pqcrypto-ntruprime", version = "0.1.5", optional = true }
+pqcrypto-saber = { package = "pqcrypto-saber-wasi", path = "../pqcrypto-saber", version = "0.1.10", optional = true }
+pqcrypto-classicmceliece = { package = "pqcrypto-classicmceliece-wasi", path = "../pqcrypto-classicmceliece", version = "0.1.6", optional = true }
+pqcrypto-hqc = { package = "pqcrypto-hqc-wasi", path = "../pqcrypto-hqc", version = "0.1.4", optional = true }
+pqcrypto-dilithium = { package = "pqcrypto-dilithium-wasi", path = "../pqcrypto-dilithium", version = "0.4.4", optional = true }
+pqcrypto-falcon = { package = "pqcrypto-falcon-wasi", path = "../pqcrypto-falcon", version = "0.2.14", optional = true }
+pqcrypto-rainbow = { package = "pqcrypto-rainbow-wasi", path = "../pqcrypto-rainbow", version = "0.2.4", optional = true }
+pqcrypto-sphincsplus = { package = "pqcrypto-sphincsplus-wasi", path = "../pqcrypto-sphincsplus", version = "0.6.3", optional = true }
 
 [features]
 default = ["pqcrypto-kyber","pqcrypto-frodo","pqcrypto-ntru","pqcrypto-ntruprime","pqcrypto-saber","pqcrypto-classicmceliece","pqcrypto-hqc","pqcrypto-dilithium","pqcrypto-falcon","pqcrypto-rainbow","pqcrypto-sphincsplus",]
